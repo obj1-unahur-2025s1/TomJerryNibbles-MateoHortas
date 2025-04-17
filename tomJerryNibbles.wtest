@@ -15,3 +15,77 @@ describe "Grupo de test" {
   }
 
 }
+
+
+
+
+describe "testing del ejercicio"{
+
+test "velocidad de tom al inicio es 10"{
+assert.equals(10,tom.velocidadMaxima())
+}
+
+test "comer a jerry, velocidad max será de 15.2 y energia 102"{
+tom.comer(jerry)
+assert.equals(tom.velocidadMaxima(),15.2)
+assert.equals(tom.energia(),102)   
+   }
+//poner 1ro el valor esperado osea 102 o 15.2
+
+test "correr 24mts su velocidad max sera de 14 y energia de 90"{
+tom.comer(jerry)
+tom.correr(24)
+assert.equals(14,tom.velocidadMaxima())
+assert.equals(90,tom.energia())
+}
+
+test "tom come a nibbles,su velocidad max es de 18.7 y su energia es 137"{
+   tom.comer(jerry)
+tom.correr(24)
+tom.comer(nibbles)
+assert.equals(18.7,tom.velocidadMaxima())
+assert.equals(137,tom.energia())
+}
+
+test "jerry cumple años y tom lo come, su velocidad max sera de 25.9 y su energia de 209"{
+tom.comer(jerry)
+tom.correr(24)
+tom.comer(nibbles)
+jerry.cumplirAños()
+tom.comer(jerry)
+assert.equals(3,jerry.edad())
+assert.equals(25.9,tom.velocidadMaxima())
+assert.equals(209,tom.energia())
+}
+
+
+test "tom corre 38 metros su velocidad max es de 24 y su energia 190"{
+
+tom.comer(jerry)
+tom.correr(24)
+tom.comer(nibbles)
+jerry.cumplirAños()
+tom.comer(jerry)
+tom.correr(38)
+assert.equals(24,tom.velocidadMaxima())
+assert.equals(190,tom.energia())
+}
+
+test "tom come a miTorta, velocidad max: 12.7 y energia: 77" {
+assert.equals(10,tom.velocidadMaxima()) 
+tom.comer(miTorta)
+assert.equals(miTorta, tom.ultimoRatonDeTom())
+assert.equals(12.7, tom.velocidadMaxima())
+ assert.equals(77, tom.energia())
+}
+
+test "tom caza a miTorta a 10 metros, velocidad max: 12.2 y energia: 72" {
+assert.equals(10, tom.velocidadMaxima())  // Verificamos que la velocidad inicial es 10
+tom.cazar(miTorta, 10)
+ assert.equals(miTorta, tom.ultimoRatonDeTom())
+assert.equals(12.2, tom.velocidadMaxima())
+ assert.equals(72, tom.energia()) 
+
+
+}
+}
